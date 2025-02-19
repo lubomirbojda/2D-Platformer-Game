@@ -1,27 +1,35 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     private float moveSpeed = 5f;
     private bool isFacingRight = true;
     private float horizontalInput;
+
+    private bool isInAttack = false;
     
 
     private Rigidbody2D playerRigidBody;
+    private Animator animator;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        //horizontalInput = Input.GetAxis("Horizontal");
+        
         Vector2 direction = new Vector2(horizontalInput * moveSpeed, playerRigidBody.linearVelocityY);
         playerRigidBody.linearVelocity = direction;
-
-        CheckFlip();
+        animator.SetFloat("xVelocity", Mathf.Abs(playerRigidBody.linearVelocityX));
+        animator.SetFloat("yVelocity", playerRigidBody.linearVelocityY);
+            
     }
 
     private void CheckFlip()
@@ -33,4 +41,24 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        horizontalInput = context.ReadValue<Vector2>().x;
+        CheckFlip();
+    }
+
+    public void OnAttack()
+    {
+        if (!isInAttack && !animator.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
+        {
+            isInAttack = true;
+            animator.SetBool("isAttacking", isInAttack);
+        }
+    }
+
+    public void EndAttack()
+    {
+        isInAttack = false;
+        animator.SetBool("isAttacking", isInAttack);
+    }
 }

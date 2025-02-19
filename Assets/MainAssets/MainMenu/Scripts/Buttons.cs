@@ -1,8 +1,12 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public static GameObject selectedCharacter;
+    [SerializeField] private GameObject warriorPrefab;
+    [SerializeField] private GameObject wizardPrefab;
     //// Start is called once before the first execution of Update after the MonoBehaviour is created
     //void Start()
     //{
@@ -15,14 +19,23 @@ public class MainMenu : MonoBehaviour
 
     //}
 
+    private void Awake()
+    {
+    }
+
+    
+
     public void Play()
     {
+        selectedCharacter = wizardPrefab;
         SceneManager.LoadScene("Level1");
     }
 
     public void Options()
     {
-        Debug.Log("Options not implemented yet.");
+        selectedCharacter = warriorPrefab;
+        SceneManager.LoadScene("Level1");
+        //Debug.Log("Options not implemented yet.");
     }
 
     public void Quit()
