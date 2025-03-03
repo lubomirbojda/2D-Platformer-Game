@@ -8,8 +8,7 @@ public class SpawnPlayer : MonoBehaviour
     void Start()
     {
         GameObject characterToSpawn = MainMenu.selectedCharacter;
-        Instantiate(characterToSpawn, defaultPlayerPrefab.transform.position, Quaternion.identity);
-        
+        Instantiate(characterToSpawn, defaultPlayerPrefab.transform.position, Quaternion.identity);     
     }
 
     // Update is called once per frame

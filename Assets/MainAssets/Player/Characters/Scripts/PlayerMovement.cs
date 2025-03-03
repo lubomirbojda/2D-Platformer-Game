@@ -3,7 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private GameObject attackHitbox_;
     private bool isFacingRight = true;
     private float horizontalInput;
 
@@ -37,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
         if ((isFacingRight && horizontalInput < 0f) || (!isFacingRight && horizontalInput > 0f))
         {
             isFacingRight = !isFacingRight;
-            playerRigidBody.transform.localScale = new Vector3(playerRigidBody.transform.localScale.x * -1, playerRigidBody.transform.localScale.y, playerRigidBody.transform.localScale.z);
+            playerRigidBody.transform.localScale = 
+                new Vector3(playerRigidBody.transform.localScale.x * -1, 
+                playerRigidBody.transform.localScale.y, 
+                playerRigidBody.transform.localScale.z);
         }
     }
 
@@ -51,14 +55,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isInAttack && !animator.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
         {
+            attackHitbox_.SetActive(true);
             isInAttack = true;
-            animator.SetBool("isAttacking", isInAttack);
+            animator.SetBool("isAttacking", isInAttack);    
         }
     }
 
     public void EndAttack()
     {
+        attackHitbox_.SetActive(false);
         isInAttack = false;
-        animator.SetBool("isAttacking", isInAttack);
+        animator.SetBool("isAttacking", isInAttack); 
     }
 }

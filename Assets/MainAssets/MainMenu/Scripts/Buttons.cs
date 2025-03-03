@@ -35,12 +35,10 @@ public class MainMenu : MonoBehaviour
     {
         selectedCharacter = warriorPrefab;
         SceneManager.LoadScene("Level1");
-        //Debug.Log("Options not implemented yet.");
     }
 
     public void Quit()
     {
-        Debug.Log("Quitting game.");
         Application.Quit();
     }
 }

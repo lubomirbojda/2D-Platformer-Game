@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerJumpScript : MonoBehaviour
 {
 
-    private float jumpSpeed = 10f;
+    [SerializeField] private float jumpSpeed;
     private bool isInJump = false;
     private bool isGrounded = true;
 
