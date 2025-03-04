@@ -30,12 +30,6 @@ public class SkeletonWhiteScript : MonoBehaviour
         if (collision.CompareTag("EnemyMovePoint"))
         {
             isFacingRight_ = !isFacingRight_;
-            //enemy_.enemyRigidBody_.transform.localScale = 
-            //    new Vector3(
-            //        enemy_.enemyRigidBody_.transform.localScale.x * -1,
-            //        enemy_.enemyRigidBody_.transform.localScale.y,
-            //        enemy_.enemyRigidBody_.transform.localScale.z
-            //    );
 
             enemy_.enemyRigidBody_.transform.Rotate(0, 180, 0);
         }

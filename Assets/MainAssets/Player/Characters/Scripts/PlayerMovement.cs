@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-    [SerializeField] private GameObject attackHitbox_;
+    //[SerializeField] private GameObject attackHitbox_;
+    [SerializeField] private PlayerAttack PlayerAttack_;
     private bool isFacingRight = true;
     private float horizontalInput;
 
@@ -55,15 +56,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isInAttack && !animator.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
         {
-            attackHitbox_.SetActive(true);
+            //attackHitbox_.SetActive(true);
+            PlayerAttack_.Attack();
             isInAttack = true;
-            animator.SetBool("isAttacking", isInAttack);    
+            animator.SetBool("isAttacking", isInAttack);
         }
     }
 
     public void EndAttack()
     {
-        attackHitbox_.SetActive(false);
+        //attackHitbox_.SetActive(false);
+        PlayerAttack_.EndAttack();
         isInAttack = false;
         animator.SetBool("isAttacking", isInAttack); 
     }
