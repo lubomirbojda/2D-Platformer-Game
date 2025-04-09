@@ -3,63 +3,59 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    //[SerializeField] private GameObject attackHitbox_;
+    [SerializeField] private float MoveSpeed_;
     [SerializeField] private PlayerAttack PlayerAttack_;
-    private bool isFacingRight = true;
-    private float horizontalInput;
+    private bool IsFacingRight_ = true;
+    private float HorizontalInput_;
 
-    private bool isInAttack = false;
+    private bool IsInAttack_ = false;
     
 
-    private Rigidbody2D playerRigidBody;
-    private Animator animator;
+    private Rigidbody2D PlayerRigidBody_;
+    private Animator Animator_;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerRigidBody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        PlayerRigidBody_ = GetComponent<Rigidbody2D>();
+        Animator_ = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        //horizontalInput = Input.GetAxis("Horizontal");
-        
-        Vector2 direction = new Vector2(horizontalInput * moveSpeed, playerRigidBody.linearVelocityY);
-        playerRigidBody.linearVelocity = direction;
-        animator.SetFloat("xVelocity", Mathf.Abs(playerRigidBody.linearVelocityX));
-        animator.SetFloat("yVelocity", playerRigidBody.linearVelocityY);
-            
+    {    
+        Vector2 direction = new Vector2(HorizontalInput_ * MoveSpeed_, PlayerRigidBody_.linearVelocityY);
+        PlayerRigidBody_.linearVelocity = direction;
+        Animator_.SetFloat("xVelocity", Mathf.Abs(PlayerRigidBody_.linearVelocityX));
+        Animator_.SetFloat("yVelocity", PlayerRigidBody_.linearVelocityY);
     }
 
     private void CheckFlip()
     {
-        if ((isFacingRight && horizontalInput < 0f) || (!isFacingRight && horizontalInput > 0f))
+        if ((IsFacingRight_ && HorizontalInput_ < 0f) || (!IsFacingRight_ && HorizontalInput_ > 0f))
         {
-            isFacingRight = !isFacingRight;
-            playerRigidBody.transform.localScale = 
-                new Vector3(playerRigidBody.transform.localScale.x * -1, 
-                playerRigidBody.transform.localScale.y, 
-                playerRigidBody.transform.localScale.z);
+            IsFacingRight_ = !IsFacingRight_;
+            PlayerRigidBody_.transform.localScale = 
+                new Vector3(PlayerRigidBody_.transform.localScale.x * -1, 
+                PlayerRigidBody_.transform.localScale.y, 
+                PlayerRigidBody_.transform.localScale.z);
         }
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        horizontalInput = context.ReadValue<Vector2>().x;
+        HorizontalInput_ = context.ReadValue<Vector2>().x;
         CheckFlip();
     }
 
     public void OnAttack()
     {
-        if (!isInAttack && !animator.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
+        if (!IsInAttack_ && !Animator_.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
         {
             //attackHitbox_.SetActive(true);
             PlayerAttack_.Attack();
-            isInAttack = true;
-            animator.SetBool("isAttacking", isInAttack);
+            IsInAttack_ = true;
+            Animator_.SetBool("isAttacking", IsInAttack_);
         }
     }
 
@@ -67,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //attackHitbox_.SetActive(false);
         PlayerAttack_.EndAttack();
-        isInAttack = false;
-        animator.SetBool("isAttacking", isInAttack); 
+        IsInAttack_ = false;
+        Animator_.SetBool("isAttacking", IsInAttack_); 
     }
 }
