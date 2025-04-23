@@ -2340,7 +2340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b377ace505975d848945e835b1845d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultPlayerPrefab: {fileID: 1496891678}
+  Default_: {fileID: 1496891678}
+  WarriorPrefab_: {fileID: 16539347883879541, guid: fa3e5571ef250a146b9c0d36c0e0f501, type: 3}
+  WizardPrefab_: {fileID: 8677901855290080071, guid: 8a126005067069749b659e949fb54fbf, type: 3}
 --- !u!4 &1496891680
 Transform:
   m_ObjectHideFlags: 0
@@ -2516,7 +2518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1755101606}
   - component: {fileID: 1755101605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
