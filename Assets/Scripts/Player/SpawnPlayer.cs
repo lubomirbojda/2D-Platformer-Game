@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class SpawnPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject Default_;
-    [SerializeField] private GameObject WarriorPrefab_;
-    [SerializeField] private GameObject WizardPrefab_;
+    [SerializeField] private GameObject _default;
+    [SerializeField] private GameObject _warriorPrefab;
+    [SerializeField] private GameObject _wizardPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,10 +22,10 @@ public class SpawnPlayer : MonoBehaviour
         switch (PlayerPrefs.GetInt("SelectedCharacter"))
         {
             case 0:
-                Instantiate(WarriorPrefab_, Default_.transform.position, Quaternion.identity);
+                Instantiate(_warriorPrefab, _default.transform.position, Quaternion.identity);
                 break;
             case 1:
-                Instantiate(WizardPrefab_, Default_.transform.position, Quaternion.identity);
+                Instantiate(_wizardPrefab, _default.transform.position, Quaternion.identity);
                 break;
 
         }

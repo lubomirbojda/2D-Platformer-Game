@@ -2,23 +2,56 @@ using UnityEngine;
 
 public class Enemy
 {
-    [SerializeField] public float MoveSpeed_ { get; protected set; }
-    [SerializeField] public float JumpSpeed_ { get; protected set; }
-    [SerializeField] public int Health_ { get; protected set; }
+    public float MoveSpeed { get; protected set; }
+    public float JumpSpeed { get; protected set; }
+    public int Health { get; protected set; }
 
-    public bool CanTakeDamage_ { get; set; } = true;
+    public bool CanTakeDamage { get; set; } = true;
 
-    public readonly Rigidbody2D enemyRigidBody_;
+    public readonly Rigidbody2D EnemyRigidBody;
+
+    public bool IsDead { get; protected set; } = false;
+
 
     public Enemy(float moveSpeed, float jumpSpeed, int health, Rigidbody2D enemyRigidBody)
     {
-        MoveSpeed_ = moveSpeed;
-        JumpSpeed_ = jumpSpeed;
-        Health_ = health;
-        enemyRigidBody_ = enemyRigidBody;
+        MoveSpeed = moveSpeed;
+        JumpSpeed = jumpSpeed;
+        Health = health;
+        EnemyRigidBody = enemyRigidBody;
     }
 
     public virtual void Attack() { }
     public virtual void Move(bool facingRight, bool facingUp) { }
-    public virtual void TakeDamage(int damage) { }
+    public virtual void TakeDamage() 
+    {
+        if (CanTakeDamage)
+        {
+            Health--;
+        }
+
+        if (Health <= 0)
+        {
+            IsDead = true;
+        }
+    }
+
+    public void CheckEnterCollisionWithPlayerAttack(Collider2D collision, AudioSource audioSource, AudioClip hitAudioClip)
+    {
+        if (collision.CompareTag("Attack"))
+        {
+            TakeDamage();
+            CanTakeDamage = false;
+            AudioPlay.PlayAudioClip(audioSource, hitAudioClip);
+            Debug.Log("Enemy zivoty: " + Health);
+        }
+    }
+
+    public void CheckExitCollisionWithPlayerAttack(Collider2D collision)
+    {
+        if (collision.CompareTag("Attack"))
+        {
+            CanTakeDamage = true;
+        }
+    }
 }

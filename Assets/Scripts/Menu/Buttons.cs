@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject SelectLevelScreen_;
-    [SerializeField] private GameObject CharacterSelectScreen_;
-    [SerializeField] private GameObject AbilitySelectScreen_;
-    [SerializeField] private GameObject OptionsScreen_;
-    [SerializeField] private GameObject ResetScreen_;
+    [SerializeField] private GameObject _selectLevelScreen;
+    [SerializeField] private GameObject _characterSelectScreen;
+    [SerializeField] private GameObject _abilitySelectScreen;
+    [SerializeField] private GameObject _optionsScreen;
+    [SerializeField] private GameObject _resetScreen;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,58 +37,58 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SelectLevelScreen_.SetActive(true);
+        _selectLevelScreen.SetActive(true);
     }
 
     public void LevelSelectionClose()
     {
-        SelectLevelScreen_.SetActive(false);
+        _selectLevelScreen.SetActive(false);
     }
 
     public void CharacterSelectionButton()
     {
-        CharacterSelectScreen_.SetActive(true);
+        _characterSelectScreen.SetActive(true);
     }
 
     public void CharacterSelectionClose()
     {
-        CharacterSelectScreen_.SetActive(false);
+        _characterSelectScreen.SetActive(false);
     }
 
     public void AbilitySelectionButton()
     {
-        AbilitySelectScreen_.SetActive(true);
+        _abilitySelectScreen.SetActive(true);
     }
 
     public void AbilitySelectionClose()
     {
-        AbilitySelectScreen_.SetActive(false);
+        _abilitySelectScreen.SetActive(false);
     }
 
     public void Level1Button()
     {
-        CoinManager.pickedCoins.Clear();
-        SceneManager.LoadScene("Level1");
+        CoinManager.PickedCoins.Clear();
+        SceneManager.LoadScene("DemoCharacters");
     }
 
     public void Options()
     {
-        OptionsScreen_.SetActive(true);
+        _optionsScreen.SetActive(true);
     }
 
     public void OptionsClose()
     {
-        OptionsScreen_.SetActive(false);
+        _optionsScreen.SetActive(false);
     }
 
     public void ResetButtonClick()
     {
-        ResetScreen_.SetActive(true);
+        _resetScreen.SetActive(true);
     }
 
     public void ResetClose()
     {
-        ResetScreen_.SetActive(false);
+        _resetScreen.SetActive(false);
     }
 
     public void SetSelectedCharacter(int charaterIndex)

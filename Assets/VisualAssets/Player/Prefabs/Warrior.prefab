@@ -214,10 +214,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1e102bbaa98e64a83134a53c7352a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed_: 5
-  PlayerAttack_: {fileID: 1439379752867142698}
-  AudioPlay_: {fileID: 6332704163627114351}
-  AttackAudioClip_: {fileID: 8300000, guid: 565dd00150f31ab448a29a38e3227dc1, type: 3}
+  _moveSpeed: 5
+  _playerAttack: {fileID: 1439379752867142698}
+  _audioSource: {fileID: 9162210277030336193}
+  _attackAudioClip: {fileID: 8300000, guid: 565dd00150f31ab448a29a38e3227dc1, type: 3}
 --- !u!95 &6015814692437666054
 Animator:
   serializedVersion: 7
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18841ebebf9340945985e49a71312cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackHitbox_: {fileID: 1280046007592368571}
+  _attackHitbox: {fileID: 1280046007592368571}
 --- !u!114 &7095721560086388474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,7 +381,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3791624018621269332}
   - component: {fileID: 9162210277030336193}
-  - component: {fileID: 6332704163627114351}
   m_Layer: 0
   m_Name: SoundEffectsPlayer
   m_TagString: Untagged
@@ -501,19 +500,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6332704163627114351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177992908388999600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a1b877bafc48a44bac126febd70398, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource_: {fileID: 9162210277030336193}
 --- !u!1 &1280046007592368571
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,4 +761,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942c427e051f120498b7c98f2deb8a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 10
+  _jumpSpeed: 10

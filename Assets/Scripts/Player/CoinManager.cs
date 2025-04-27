@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class CoinManager : MonoBehaviour
 {
-    public static List<CoinScript> pickedCoins = new List<CoinScript>();
+    public static List<CoinScript> PickedCoins = new();
 
     public static void AddPickedCoin(CoinScript coin)
     {
-        pickedCoins.Add(coin);
-        Debug.Log(pickedCoins.Count);
+        PickedCoins.Add(coin);
     }
 
     public static void SavePickedCoins()
     {
-        foreach (var coin in pickedCoins)
+        foreach (var coin in PickedCoins)
         {
             coin.SaveCoin();
         }

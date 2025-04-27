@@ -3,20 +3,20 @@ using UnityEngine;
 public class PlayerJumpScript : MonoBehaviour
 {
 
-    [SerializeField] private float jumpSpeed;
-    private bool isInJump = false;
-    private bool isGrounded = true;
+    [SerializeField] private float _jumpSpeed;
+    private bool _isInJump = false;
+    private bool _isGrounded = true;
 
-    private Rigidbody2D playerRB;
+    private Rigidbody2D _playerRB;
     //private BoxCollider2D jumpCollider;
 
-    private Animator animator;
+    private Animator _animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerRB = GetComponentInParent<Rigidbody2D>();
+        _playerRB = GetComponentInParent<Rigidbody2D>();
         //jumpCollider = GetComponent<BoxCollider2D>();
-        animator = GetComponentInParent<Animator>();
+        _animator = GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,24 +26,24 @@ public class PlayerJumpScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isInJump = false;
-        isGrounded = true;
-        animator.SetBool("isJumping", isInJump);
+        _isInJump = false;
+        _isGrounded = true;
+        _animator.SetBool("isJumping", _isInJump);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isGrounded = false;
+        _isGrounded = false;
     }
 
     public void OnJump()
     {
-        if (!isInJump && isGrounded)
+        if (!_isInJump && _isGrounded)
         {
-            playerRB.linearVelocityY = jumpSpeed;
-            isInJump = true;
-            isGrounded = false;
-            animator.SetBool("isJumping", isInJump);
+            _playerRB.linearVelocityY = _jumpSpeed;
+            _isInJump = true;
+            _isGrounded = false;
+            _animator.SetBool("isJumping", _isInJump);
         }  
     }
 }

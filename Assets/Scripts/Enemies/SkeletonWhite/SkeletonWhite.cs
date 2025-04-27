@@ -16,19 +16,13 @@ public class SkeletonWhite : PassiveEnemy
     {
         if (facingRight)
         {
-            enemyRigidBody_.linearVelocity = new Vector2 (MoveSpeed_, enemyRigidBody_.linearVelocityY);
+            
+            EnemyRigidBody.linearVelocity = new Vector2 (MoveSpeed, EnemyRigidBody.linearVelocityY);
         }
         else
         {
-            enemyRigidBody_.linearVelocity = new Vector2(MoveSpeed_ * -1, enemyRigidBody_.linearVelocityY);
+            EnemyRigidBody.linearVelocity = new Vector2(MoveSpeed * -1, EnemyRigidBody.linearVelocityY);
         }
     }
 
-    public override void TakeDamage(int damage)
-    {
-        if (CanTakeDamage_) 
-        {
-            Health_ -= damage;
-        }
-    }
 }

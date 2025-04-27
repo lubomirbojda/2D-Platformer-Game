@@ -3,70 +3,70 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed_;
-    [SerializeField] private PlayerAttack PlayerAttack_;
-    private bool IsFacingRight_ = true;
-    private float HorizontalInput_;
+    [SerializeField] private float _moveSpeed;
+    [SerializeField] private PlayerAttack _playerAttack;
+    private bool _isFacingRight = true;
+    private float _horizontalInput;
 
-    [SerializeField] private AudioPlay AudioPlay_;
-    [SerializeField] private AudioClip AttackAudioClip_;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _attackAudioClip;
 
-    private bool IsInAttack_ = false;
+    private bool _isInAttack = false;
     
 
-    private Rigidbody2D PlayerRigidBody_;
-    private Animator Animator_;
+    private Rigidbody2D _playerRigidBody;
+    private Animator _animator;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        PlayerRigidBody_ = GetComponent<Rigidbody2D>();
-        Animator_ = GetComponent<Animator>();
+        _playerRigidBody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {    
-        Vector2 direction = new Vector2(HorizontalInput_ * MoveSpeed_, PlayerRigidBody_.linearVelocityY);
-        PlayerRigidBody_.linearVelocity = direction;
-        Animator_.SetFloat("xVelocity", Mathf.Abs(PlayerRigidBody_.linearVelocityX));
-        Animator_.SetFloat("yVelocity", PlayerRigidBody_.linearVelocityY);
+        Vector2 direction = new Vector2(_horizontalInput * _moveSpeed, _playerRigidBody.linearVelocityY);
+        _playerRigidBody.linearVelocity = direction;
+        _animator.SetFloat("xVelocity", Mathf.Abs(_playerRigidBody.linearVelocityX));
+        _animator.SetFloat("yVelocity", _playerRigidBody.linearVelocityY);
     }
 
     private void CheckFlip()
     {
-        if ((IsFacingRight_ && HorizontalInput_ < 0f) || (!IsFacingRight_ && HorizontalInput_ > 0f))
+        if ((_isFacingRight && _horizontalInput < 0f) || (!_isFacingRight && _horizontalInput > 0f))
         {
-            IsFacingRight_ = !IsFacingRight_;
-            PlayerRigidBody_.transform.localScale = 
-                new Vector3(PlayerRigidBody_.transform.localScale.x * -1, 
-                PlayerRigidBody_.transform.localScale.y, 
-                PlayerRigidBody_.transform.localScale.z);
+            _isFacingRight = !_isFacingRight;
+            _playerRigidBody.transform.localScale = 
+                new Vector3(_playerRigidBody.transform.localScale.x * -1, 
+                _playerRigidBody.transform.localScale.y, 
+                _playerRigidBody.transform.localScale.z);
         }
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        HorizontalInput_ = context.ReadValue<Vector2>().x;
+        _horizontalInput = context.ReadValue<Vector2>().x;
         CheckFlip();
     }
 
     public void OnAttack()
     {
-        if (!IsInAttack_ && !Animator_.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
+        if (!_isInAttack && !_animator.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
         {
-            PlayerAttack_.Attack();
-            IsInAttack_ = true;
-            Animator_.SetBool("isAttacking", IsInAttack_);
-            AudioPlay_.PlayAudioClip(AttackAudioClip_);
+            _playerAttack.Attack();
+            _isInAttack = true;
+            _animator.SetBool("isAttacking", _isInAttack);
+            AudioPlay.PlayAudioClip(_audioSource, _attackAudioClip);
         }
     }
 
     public void EndAttack()
     {
-        PlayerAttack_.EndAttack();
-        IsInAttack_ = false;
-        Animator_.SetBool("isAttacking", IsInAttack_); 
+        _playerAttack.EndAttack();
+        _isInAttack = false;
+        _animator.SetBool("isAttacking", _isInAttack); 
     }
 
 }

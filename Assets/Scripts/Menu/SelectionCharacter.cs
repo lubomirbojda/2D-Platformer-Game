@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SelectionCharacter : MonoBehaviour
 {
-    [SerializeField] private GameObject Selection_;
-    [SerializeField] private int CharacterIndex_;
+    [SerializeField] private GameObject _selection;
+    [SerializeField] private int _characterIndex;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,13 +13,13 @@ public class SelectionCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("SelectedCharacter") == CharacterIndex_)
+        if (PlayerPrefs.GetInt("SelectedCharacter") == _characterIndex)
         {
-            Selection_.SetActive(true);
+            _selection.SetActive(true);
         }
         else
         {
-            Selection_.SetActive(false);
+            _selection.SetActive(false);
         }
     }
 }

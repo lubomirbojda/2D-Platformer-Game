@@ -1234,8 +1234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb29be07a046a84382c9c04919e7ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Selection_: {fileID: 1272166309}
-  CharacterIndex_: 0
+  _selection: {fileID: 1272166309}
+  _characterIndex: 0
 --- !u!1 &447272978
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,7 +3370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b636ce8e1e625e4586b964a8c5e3b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VolumeSlider_: {fileID: 1423178746}
+  _volumeSlider: {fileID: 1423178746}
 --- !u!1 &1470184916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3837,8 +3837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb29be07a046a84382c9c04919e7ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Selection_: {fileID: 2024365542}
-  CharacterIndex_: 1
+  _selection: {fileID: 2024365542}
+  _characterIndex: 1
 --- !u!1 &1809755605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4644,11 +4644,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56624aaedaf56f4498d0b11e1f49cd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectLevelScreen_: {fileID: 262097045}
-  CharacterSelectScreen_: {fileID: 1120550157}
-  AbilitySelectScreen_: {fileID: 52103262}
-  OptionsScreen_: {fileID: 1597719621}
-  ResetScreen_: {fileID: 1421152504}
+  _selectLevelScreen: {fileID: 262097045}
+  _characterSelectScreen: {fileID: 1120550157}
+  _abilitySelectScreen: {fileID: 52103262}
+  _optionsScreen: {fileID: 1597719621}
+  _resetScreen: {fileID: 1421152504}
 --- !u!114 &2128556076
 MonoBehaviour:
   m_ObjectHideFlags: 0
