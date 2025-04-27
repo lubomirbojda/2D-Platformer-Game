@@ -198,9 +198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71bcc790b3652b489681bdd3e73455c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dinoRigidBody: {fileID: 7056723158538498671}
-  _shotSpeed: 2.5
-  _dinoStraighAttack: {fileID: 8362202760685661880}
+  EnemyRigidBody: {fileID: 7056723158538498671}
+  ShotRigidBody: {fileID: 6386431226279138261}
+  ShotSpeed: 3
+  ShotLifeTime: 1.5
 --- !u!1 &2724172026647839276
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,10 +561,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc09cdd7bb168a847a1961793ff404ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 0
+  JumpSpeed: 0
+  Health: 3
+  EnemyRigidBody: {fileID: 7056723158538498671}
+  AudioSource: {fileID: 8078345273354258420}
+  DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
+  HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
+  ShotObject: {fileID: 644026983635459356}
+  StartingPosition: {fileID: 3434438121661113654}
   _fireDelay: 3.5
-  _rigidbody: {fileID: 7056723158538498671}
-  _shot: {fileID: 644026983635459356}
-  _startingPosition: {fileID: 3434438121661113654}
   _animator: {fileID: 3465424086296560255}
 --- !u!1 &8640828334895090311
 GameObject:

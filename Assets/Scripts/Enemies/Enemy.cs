@@ -1,25 +1,21 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
-public class Enemy
+public class Enemy : MonoBehaviour
 {
-    public float MoveSpeed { get; protected set; }
-    public float JumpSpeed { get; protected set; }
-    public int Health { get; protected set; }
+    [SerializeField] protected float MoveSpeed;
+    [SerializeField] protected float JumpSpeed;
+    [SerializeField] protected int Health;
+    [SerializeField] protected Rigidbody2D EnemyRigidBody;
 
-    public bool CanTakeDamage { get; set; } = true;
+    [SerializeField] protected AudioSource AudioSource;
+    [SerializeField] protected AudioClip DeathAudioClip;
+    [SerializeField] protected AudioClip HitAudioClip;
 
-    public readonly Rigidbody2D EnemyRigidBody;
+    protected bool CanTakeDamage { get; set; } = true;
+    protected bool IsDead { get; set; } = false;
 
-    public bool IsDead { get; protected set; } = false;
-
-
-    public Enemy(float moveSpeed, float jumpSpeed, int health, Rigidbody2D enemyRigidBody)
-    {
-        MoveSpeed = moveSpeed;
-        JumpSpeed = jumpSpeed;
-        Health = health;
-        EnemyRigidBody = enemyRigidBody;
-    }
+    //protected readonly Rigidbody2D EnemyRigidBody;
 
     public virtual void Attack() { }
     public virtual void Move(bool facingRight, bool facingUp) { }
@@ -36,18 +32,27 @@ public class Enemy
         }
     }
 
-    public void CheckEnterCollisionWithPlayerAttack(Collider2D collision, AudioSource audioSource, AudioClip hitAudioClip)
+    protected virtual void Update()
+    {
+        if (IsDead)
+        {
+            Destroy(gameObject);
+            AudioPlay.PlayAudioClip(AudioSource, DeathAudioClip);
+        }
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Attack"))
         {
             TakeDamage();
             CanTakeDamage = false;
-            AudioPlay.PlayAudioClip(audioSource, hitAudioClip);
+            AudioPlay.PlayAudioClip(AudioSource, HitAudioClip);
             Debug.Log("Enemy zivoty: " + Health);
         }
     }
 
-    public void CheckExitCollisionWithPlayerAttack(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Attack"))
         {

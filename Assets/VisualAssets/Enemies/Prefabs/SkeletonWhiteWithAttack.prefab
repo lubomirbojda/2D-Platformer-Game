@@ -596,13 +596,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9fb9c3a3c941b458bce5a37e1c555a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isFacingRight: 0
-  _rigidbody: {fileID: 934718220880734146}
+  MoveSpeed: 1.5
+  JumpSpeed: 5
+  Health: 3
+  EnemyRigidBody: {fileID: 934718220880734146}
+  AudioSource: {fileID: 6870918222916356083}
+  DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
+  HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
+  IsFacingRight: 0
   _animator: {fileID: 1156578537494369320}
   _attackHitbox: {fileID: 1774744349616713638}
-  _audioSource: {fileID: 6870918222916356083}
-  _deathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
-  _hitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
 --- !u!95 &1156578537494369320
 Animator:
   serializedVersion: 7
@@ -640,7 +643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8376850581968595344
 Transform:
   m_ObjectHideFlags: 0

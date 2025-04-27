@@ -7,10 +7,11 @@ public class WizardBall : MonoBehaviour
     private Rigidbody2D _ballRigidBody;
     private bool _isFacingRight = true;
     private float _ballSpeed = 3f;
+
     void Start()
     {
         _ballRigidBody = GetComponent<Rigidbody2D>();
-        EnemyShotBasic.CheckRigidbodyRotate(_wizzardRigidBody, _ballRigidBody, ref _isFacingRight);
+        EnemyShot.CheckRigidbodyRotate(_wizzardRigidBody, _ballRigidBody, ref _isFacingRight);
     }
 
     void Update()

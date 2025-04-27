@@ -1,39 +1,22 @@
 using UnityEngine;
 
-public class GreenDitoShot : MonoBehaviour
+public class GreenDitoShot : EnemyShot
 {
-    [SerializeField] private Rigidbody2D _dinoRigidBody;
-    [SerializeField] private float _shotSpeed;
-    [SerializeField] private GreenDinoStraighAttack _dinoStraighAttack;
-    private Rigidbody2D _shotRigidBody;
-    private bool _isFacingRight = true;
-    
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
-        _shotRigidBody = GetComponent<Rigidbody2D>();
-        EnemyShotBasic.CheckRigidbodyRotate(_dinoRigidBody, _shotRigidBody, ref _isFacingRight);
+        base.Start();
 
-        if (_isFacingRight)
+        if (IsFacingRight)
         {
-            _shotRigidBody.linearVelocityX = _shotSpeed;
+            ShotRigidBody.linearVelocityX = ShotSpeed;
         }
         else
         {
-            _shotRigidBody.linearVelocityX = _shotSpeed * -1;
+            ShotRigidBody.linearVelocityX = ShotSpeed * -1;
         }
 
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, ShotLifeTime);
     }
 
-    private void OnDestroy()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }

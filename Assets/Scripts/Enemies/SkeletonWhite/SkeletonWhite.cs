@@ -2,11 +2,7 @@ using UnityEngine;
 
 public class SkeletonWhite : PassiveEnemy
 {
-    
-    public SkeletonWhite(float moveSpeed, float jumpSpeed, int health, Rigidbody2D enemyRigidBody) : base(moveSpeed, jumpSpeed, health, enemyRigidBody)
-    {
-    }
-
+    [SerializeField] protected bool IsFacingRight;
     public override void Attack()
     {
         
