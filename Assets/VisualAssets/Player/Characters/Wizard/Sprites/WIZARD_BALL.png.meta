@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WIZARD_BALL_0: 9104935842451373549
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

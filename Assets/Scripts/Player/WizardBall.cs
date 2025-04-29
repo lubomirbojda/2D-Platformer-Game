@@ -11,7 +11,18 @@ public class WizardBall : MonoBehaviour
     void Start()
     {
         _ballRigidBody = GetComponent<Rigidbody2D>();
-        EnemyShot.CheckRigidbodyRotate(_wizzardRigidBody, _ballRigidBody, ref _isFacingRight);
+        CheckRigidbodyRotate(_wizzardRigidBody, _ballRigidBody);
+    }
+
+    private void CheckRigidbodyRotate(Rigidbody2D rotatedBody, Rigidbody2D bodyToRotate)
+    {
+        if (rotatedBody.transform.localScale.x < 0)
+        {
+            _isFacingRight = false;
+            bodyToRotate.transform.localScale = new Vector3(bodyToRotate.transform.localScale.x * -1,
+                                                            bodyToRotate.transform.localScale.y,
+                                                            bodyToRotate.transform.localScale.z);
+        }
     }
 
     void Update()

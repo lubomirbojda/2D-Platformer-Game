@@ -68,13 +68,17 @@
     <Compile Include="Assets\Scripts\Player\WarriorAttack.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerJumpScript.cs" />
     <Compile Include="Assets\Scripts\Menu\Buttons.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Shots\StraightShot.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Shots\DestroyShotOnGround.cs" />
     <Compile Include="Assets\Scripts\Enemies\PassiveEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Dino\RedDino\RedDinoAimedAttack.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
-    <Compile Include="Assets\Scripts\Enemies\GreenDino\GreenDino.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Dino\GreenDino\GreenDinoStraightAttack.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ActiveZone.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Player\CoinScript.cs" />
@@ -88,18 +92,21 @@
     <Compile Include="Assets\Scripts\Player\SpawnPlayer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Shots\EnemyShot.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Shots\AimedShot.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\Scripts\Player\Pause.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Dino\Dino.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerGetHit.cs" />
     <Compile Include="Assets\Scripts\Enemies\SkeletonWhite\SkeletonWhite.cs" />
-    <Compile Include="Assets\Scripts\Enemies\EnemyShot.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Player\WizardBall.cs" />
@@ -116,11 +123,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Enemies\SkeletonWhite\SkeletonWhiteNoAttack.cs" />
-    <Compile Include="Assets\Scripts\Enemies\GreenDino\GreenDinoStraighAttack.cs" />
     <Compile Include="Assets\Scripts\Player\CoinManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Menu\SelectionCharacter.cs" />
-    <Compile Include="Assets\Scripts\Enemies\GreenDino\GreenDitoShot.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Bird\Bird.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

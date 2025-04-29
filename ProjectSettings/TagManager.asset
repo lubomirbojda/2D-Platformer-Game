@@ -9,6 +9,8 @@ TagManager:
   - EnemyMovePoint
   - AttackEndPoint
   - Coin
+  - Ground
+  - EnemyActiveZone
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - AttackEndPoint
   - EnemyHitbox
   - PlayerHitbox
-  - 
+  - ActiveZone
   - 
   - 
   - 
@@ -45,6 +47,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 276648211
+    locked: 0
+  - name: EnemyShot
+    uniqueID: 5844067
+    locked: 0
+  - name: Pause
+    uniqueID: 1842928791
     locked: 0
   m_RenderingLayers:
   - Default

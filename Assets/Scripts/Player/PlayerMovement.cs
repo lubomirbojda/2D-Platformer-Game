@@ -47,12 +47,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (Pause.GameIsPaused)
+            return;
+
         _horizontalInput = context.ReadValue<Vector2>().x;
         CheckFlip();
     }
 
     public void OnAttack()
     {
+        if (Pause.GameIsPaused)
+            return;
+
         if (!_isInAttack && !_animator.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
         {
             _playerAttack.Attack();

@@ -8,13 +8,7 @@ public class SpawnPlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InstantiatePlayerCharacter();   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        InstantiatePlayerCharacter();
     }
 
     private void InstantiatePlayerCharacter()
@@ -22,12 +16,18 @@ public class SpawnPlayer : MonoBehaviour
         switch (PlayerPrefs.GetInt("SelectedCharacter"))
         {
             case 0:
-                Instantiate(_warriorPrefab, _default.transform.position, Quaternion.identity);
+                SpawnPlayerCharacter(_warriorPrefab);
                 break;
             case 1:
-                Instantiate(_wizardPrefab, _default.transform.position, Quaternion.identity);
+                SpawnPlayerCharacter(_wizardPrefab);
                 break;
 
         }
+    }
+
+    private void SpawnPlayerCharacter(GameObject playerCharacter)
+    {
+        var character = Instantiate(playerCharacter, _default.transform.position, Quaternion.identity);
+        character.SetActive(true);
     }
 }

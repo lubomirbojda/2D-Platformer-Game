@@ -18,6 +18,16 @@ public class MainMenu : MonoBehaviour
             SetDeafultPlayerPrefs();
         }
         
+        CleanMenu();
+    }
+
+    private void CleanMenu()
+    {
+        _selectLevelScreen.SetActive(false);
+        _characterSelectScreen.SetActive(false);
+        _abilitySelectScreen.SetActive(false);
+        _optionsScreen.SetActive(false);
+        _resetScreen.SetActive(false);
     }
 
     private void SetDeafultPlayerPrefs()
@@ -67,8 +77,15 @@ public class MainMenu : MonoBehaviour
 
     public void Level1Button()
     {
+        //StartLevel("DemoCharacters");
+        StartLevel("Level1");
+    }
+
+    private void StartLevel(string sceneName)
+    {
+        CleanMenu();
         CoinManager.PickedCoins.Clear();
-        SceneManager.LoadScene("DemoCharacters");
+        SceneManager.LoadScene(sceneName);
     }
 
     public void Options()
@@ -94,6 +111,7 @@ public class MainMenu : MonoBehaviour
     public void SetSelectedCharacter(int charaterIndex)
     {
         PlayerPrefs.SetInt("SelectedCharacter", charaterIndex);
+        PlayerPrefs.Save();
     }
 
     public void Quit()

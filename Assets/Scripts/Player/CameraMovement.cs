@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    private Transform _playerTransform;
+    private GameObject _player;
 
     private Vector3 _velocity = Vector3.zero;
 
@@ -11,18 +11,26 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float _yMaxLimit;
     [SerializeField] private float _yMinLimit;
 
-    private void Awake()
+    private void Start()
     {
-        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 playerPosition = _playerTransform.position;
-        playerPosition = new Vector3(Mathf.Clamp(playerPosition.x, _xMinLimit, _xMaxLimit), 
-            Mathf.Clamp(playerPosition.y, _yMinLimit, _yMaxLimit),
-            -10);
-        transform.position = Vector3.SmoothDamp(transform.position, playerPosition, ref _velocity, 0.2f);
+
+        if (_player != null)
+        {
+            Vector3 playerPosition = _player.transform.position;
+            playerPosition = new Vector3(Mathf.Clamp(playerPosition.x, _xMinLimit, _xMaxLimit),
+                Mathf.Clamp(playerPosition.y, _yMinLimit, _yMaxLimit),
+                -10);
+            transform.position = Vector3.SmoothDamp(transform.position, playerPosition, ref _velocity, 0.2f);
+        }
+        else
+        {
+            _player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 }

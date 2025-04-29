@@ -26,18 +26,28 @@ public class PlayerJumpScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _isInJump = false;
-        _isGrounded = true;
-        _animator.SetBool("isJumping", _isInJump);
+        if (collision.CompareTag("Ground"))
+        {
+            _isInJump = false;
+            _isGrounded = true;
+            _animator.SetBool("isJumping", _isInJump);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _isGrounded = false;
+        if (collision.CompareTag("Ground"))
+        {
+            _isGrounded = false;
+            _isInJump = true;
+        } 
     }
 
     public void OnJump()
     {
+        if (Pause.GameIsPaused)
+            return;
+
         if (!_isInJump && _isGrounded)
         {
             _playerRB.linearVelocityY = _jumpSpeed;
