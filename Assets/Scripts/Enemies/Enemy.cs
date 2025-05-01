@@ -17,9 +17,9 @@ public class Enemy : MonoBehaviour
 
     //protected readonly Rigidbody2D EnemyRigidBody;
 
-    public virtual void Attack() { }
-    public virtual void Move(bool facingRight, bool facingUp) { }
-    public virtual void TakeDamage() 
+    protected virtual void Attack() { }
+    protected virtual void Move(bool facingRight, bool facingUp) { }
+    protected virtual void TakeDamage() 
     {
         if (CanTakeDamage)
         {

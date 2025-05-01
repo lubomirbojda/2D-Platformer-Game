@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float _xMinLimit;
     [SerializeField] private float _yMaxLimit;
     [SerializeField] private float _yMinLimit;
+    private bool _isLocked = false;
 
     private void Start()
     {
@@ -22,15 +23,29 @@ public class CameraMovement : MonoBehaviour
 
         if (_player != null)
         {
-            Vector3 playerPosition = _player.transform.position;
-            playerPosition = new Vector3(Mathf.Clamp(playerPosition.x, _xMinLimit, _xMaxLimit),
-                Mathf.Clamp(playerPosition.y, _yMinLimit, _yMaxLimit),
-                -10);
-            transform.position = Vector3.SmoothDamp(transform.position, playerPosition, ref _velocity, 0.2f);
+            if (_isLocked)
+            {
+                transform.position = Vector3.SmoothDamp(transform.position, new Vector3(_xMaxLimit, 0, -10), ref _velocity, 0.5f);
+            }
+            else
+            {
+                Vector3 playerPosition = _player.transform.position;
+                playerPosition = new Vector3(Mathf.Clamp(playerPosition.x, _xMinLimit, _xMaxLimit),
+                    Mathf.Clamp(playerPosition.y, _yMinLimit, _yMaxLimit),
+                    -10);
+                transform.position = Vector3.SmoothDamp(transform.position, playerPosition, ref _velocity, 0.2f);
+            }   
         }
         else
         {
             _player = GameObject.FindGameObjectWithTag("Player");
         }
     }
+
+    public void LockOnMaximum()
+    {
+        _isLocked = true;
+    }
+
+
 }

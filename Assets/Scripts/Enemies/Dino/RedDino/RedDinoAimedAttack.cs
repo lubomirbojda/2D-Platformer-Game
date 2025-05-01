@@ -22,10 +22,5 @@ public class RedDinoAimedAttack : Dino
         }
     }
 
-    private void MakeAttack()
-    {
-        StartAttackAnimation();
-        Attack();
-        NextFireTime = Time.time + FireDelay;
-    }
+    
 }

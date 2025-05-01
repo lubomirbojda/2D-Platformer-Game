@@ -3,12 +3,8 @@ using UnityEngine;
 public class SkeletonWhite : PassiveEnemy
 {
     [SerializeField] protected bool IsFacingRight;
-    public override void Attack()
-    {
-        
-    }
 
-    public override void Move(bool facingRight, bool facingUp)
+    protected override void Move(bool facingRight, bool facingUp)
     {
         if (facingRight)
         {

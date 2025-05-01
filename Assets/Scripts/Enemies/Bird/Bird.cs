@@ -13,15 +13,13 @@ public class Bird : ActiveEnemy
         NextFireTime = Time.time;
     }
 
-    public override void Attack()
+    protected override void Attack()
     {
         EnemyShot.InstantiateShot(ShotObject, StartingPosition);
     }
 
-    public override void Move(bool facingRight, bool facingUp)
+    protected override void Move(bool facingRight, bool facingUp)
     {
-        base.Move(facingRight, facingUp);
-
         if (facingRight)
         {
 

@@ -9,6 +9,7 @@ public class SkeletonWhiteWithAttack : SkeletonWhite
     // Update is called once per frame
     protected override void Update()
     {
+        base.Update();
         if (!_animator.GetBool("isAttacking"))
         {
             Move(IsFacingRight, false);

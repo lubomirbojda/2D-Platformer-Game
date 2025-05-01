@@ -7,9 +7,16 @@ public class Dino : ActiveEnemy
     [SerializeField] protected float FireDelay;
     protected float NextFireTime;
 
-    public override void Attack()
+    protected override void Attack()
     {
         EnemyShot.InstantiateShot(ShotObject, StartingPosition);
+    }
+
+    protected void MakeAttack()
+    {
+        StartAttackAnimation();
+        Attack();
+        NextFireTime = Time.time + FireDelay;
     }
 
 }

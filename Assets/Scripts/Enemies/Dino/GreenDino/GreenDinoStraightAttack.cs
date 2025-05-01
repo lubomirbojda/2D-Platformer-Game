@@ -8,7 +8,6 @@ public class GreenDinoStraightAttack : Dino
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //_animator.SetBool("isAttacking", true);
         MakeAttack();
     }
 
@@ -19,15 +18,7 @@ public class GreenDinoStraightAttack : Dino
 
         if (Time.time > NextFireTime)
         {
-            //_animator.SetBool("isAttacking", true);
             MakeAttack();
         }
-    }
-
-    private void MakeAttack()
-    {
-        StartAttackAnimation();
-        Attack();
-        NextFireTime = Time.time + FireDelay;
     }
 }

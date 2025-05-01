@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 3979735719731164737}
   - component: {fileID: 934718220880734146}
   - component: {fileID: 6994387013210230771}
-  - component: {fileID: 754375305667011245}
+  - component: {fileID: 526539692446513833}
   - component: {fileID: 1156578537494369320}
   m_Layer: 8
   m_Name: SkeletonWhiteBody
@@ -584,7 +584,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.2385489, y: 0.4700001}
   m_EdgeRadius: 0
---- !u!114 &754375305667011245
+--- !u!114 &526539692446513833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4554570491120112042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b9fb9c3a3c941b458bce5a37e1c555a, type: 3}
+  m_Script: {fileID: 11500000, guid: d151ed4ad9ddf5f428176bd3e88b3620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 1.5
@@ -643,7 +643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8376850581968595344
 Transform:
   m_ObjectHideFlags: 0
