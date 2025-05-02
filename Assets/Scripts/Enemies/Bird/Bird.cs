@@ -2,42 +2,28 @@ using UnityEngine;
 
 public class Bird : ActiveEnemy
 {
-    [SerializeField] protected GameObject ShotObject;
-    [SerializeField] protected GameObject StartingPosition;
-    [SerializeField] protected float FireDelay;
+    //[SerializeField] protected GameObject ShotObject;
+    //[SerializeField] protected GameObject StartingPosition;
+    //[SerializeField] protected float FireDelay;
     [SerializeField] protected bool IsFacingRight;
-    protected float NextFireTime;
+   // protected float NextFireTime;
+
+    [SerializeField] private MoveLeftRight _movement;
+    [SerializeField] private ShotAttack _shotAttack;
 
     private void Start()
     {
-        NextFireTime = Time.time;
-    }
-
-    protected override void Attack()
-    {
-        EnemyShot.InstantiateShot(ShotObject, StartingPosition);
-    }
-
-    protected override void Move(bool facingRight, bool facingUp)
-    {
-        if (facingRight)
-        {
-
-            EnemyRigidBody.linearVelocity = new Vector2(MoveSpeed, EnemyRigidBody.linearVelocityY);
-        }
-        else
-        {
-            EnemyRigidBody.linearVelocity = new Vector2(MoveSpeed * -1, EnemyRigidBody.linearVelocityY);
-        }
+        _shotAttack.SetNewFireTime(Time.time);
     }
 
     protected override void Update()
     {
         base.Update();
 
-        Move(IsFacingRight, false);
+        //Move(IsFacingRight, false);
+        _movement.Move(IsFacingRight, false);
 
-        if (Time.time > NextFireTime)
+        if (Time.time > _shotAttack.GetNextFireTime())
         {
             if (EnemyActiveZone.IsActive())
             {
@@ -53,8 +39,12 @@ public class Bird : ActiveEnemy
     private void MakeAttack()
     {
         StartAttackAnimation();
-        Attack();
-        NextFireTime = Time.time + FireDelay;
+        //Attack();
+
+        _shotAttack.Attack();
+        _shotAttack.SetNextFireTime();
+
+        //NextFireTime = Time.time + FireDelay;
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -65,7 +55,8 @@ public class Bird : ActiveEnemy
         {
             IsFacingRight = !IsFacingRight;
 
-            EnemyRigidBody.transform.Rotate(0, 180, 0);
+            //EnemyRigidBody.transform.Rotate(0, 180, 0);
+            _movement.GetRigidbody2D().transform.Rotate(0, 180, 0);
 
         }
     }

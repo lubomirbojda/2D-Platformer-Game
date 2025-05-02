@@ -3,11 +3,7 @@ using UnityEngine.Audio;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] protected float MoveSpeed;
-    [SerializeField] protected float JumpSpeed;
     [SerializeField] protected int Health;
-    [SerializeField] protected Rigidbody2D EnemyRigidBody;
-
     [SerializeField] protected AudioSource AudioSource;
     [SerializeField] protected AudioClip DeathAudioClip;
     [SerializeField] protected AudioClip HitAudioClip;
@@ -15,15 +11,23 @@ public class Enemy : MonoBehaviour
     protected bool CanTakeDamage { get; set; } = true;
     protected bool IsDead { get; set; } = false;
 
-    //protected readonly Rigidbody2D EnemyRigidBody;
+    private int _maxHealth;
 
-    protected virtual void Attack() { }
-    protected virtual void Move(bool facingRight, bool facingUp) { }
+    private void Start()
+    {
+        _maxHealth = Health;
+    }
+
     protected virtual void TakeDamage() 
     {
+        int damage = 1;
+        if (PlayerPrefs.HasKey("PlayerDamage"))
+        {
+            damage = PlayerPrefs.GetInt("PlayerDamage");
+        }
         if (CanTakeDamage)
         {
-            Health--;
+            Health -= damage;
         }
 
         if (Health <= 0)
@@ -60,5 +64,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    
+    public int GetHealth()
+    {
+        return Health;
+    }
+
+    public int GetMaxHealth()
+    {
+        return _maxHealth;
+    }
 }

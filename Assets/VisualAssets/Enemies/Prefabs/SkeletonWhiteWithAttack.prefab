@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 934718220880734146}
   - component: {fileID: 6994387013210230771}
   - component: {fileID: 526539692446513833}
+  - component: {fileID: 8039236579771029059}
   - component: {fileID: 1156578537494369320}
   m_Layer: 8
   m_Name: SkeletonWhiteBody
@@ -596,16 +597,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d151ed4ad9ddf5f428176bd3e88b3620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1.5
-  JumpSpeed: 5
   Health: 3
-  EnemyRigidBody: {fileID: 934718220880734146}
   AudioSource: {fileID: 6870918222916356083}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
-  IsFacingRight: 0
   _animator: {fileID: 1156578537494369320}
   _attackHitbox: {fileID: 1774744349616713638}
+  IsFacingRight: 0
+  _movement: {fileID: 8039236579771029059}
+--- !u!114 &8039236579771029059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554570491120112042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9bcf5468352a94da0b2f86cdae65c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 1.5
+  EnemyRigidBody: {fileID: 934718220880734146}
 --- !u!95 &1156578537494369320
 Animator:
   serializedVersion: 7
@@ -643,7 +656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8376850581968595344
 Transform:
   m_ObjectHideFlags: 0

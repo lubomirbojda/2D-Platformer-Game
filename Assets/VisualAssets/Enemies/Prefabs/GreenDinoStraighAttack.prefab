@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 6878133200234642478}
   - component: {fileID: 3465424086296560255}
   - component: {fileID: 8362202760685661880}
+  - component: {fileID: 1834839838198140367}
   m_Layer: 8
   m_Name: Body
   m_TagString: Enemy
@@ -610,18 +611,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc09cdd7bb168a847a1961793ff404ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 0
-  JumpSpeed: 0
   Health: 3
-  EnemyRigidBody: {fileID: 7056723158538498671}
   AudioSource: {fileID: 8078345273354258420}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
   EnemyActiveZone: {fileID: 3794752104516117477}
   Animator: {fileID: 3465424086296560255}
+  _shotAttack: {fileID: 1834839838198140367}
+--- !u!114 &1834839838198140367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198596658441959948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8001101ffdd40bd40831fb6257ab6e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   ShotObject: {fileID: 644026983635459356}
   StartingPosition: {fileID: 3434438121661113654}
-  FireDelay: 3
+  FireDelay: 2.5
 --- !u!1 &8640828334895090311
 GameObject:
   m_ObjectHideFlags: 0

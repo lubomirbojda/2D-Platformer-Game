@@ -709,6 +709,8 @@ GameObject:
   - component: {fileID: 349502012669307686}
   - component: {fileID: 6426285668306994742}
   - component: {fileID: 4431153773343648627}
+  - component: {fileID: 8530639965305961523}
+  - component: {fileID: 9046166977479673255}
   m_Layer: 8
   m_Name: Body
   m_TagString: Enemy
@@ -895,16 +897,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d971d01de4f6a4646aeff55bbbd3baf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
-  JumpSpeed: 0
   Health: 3
-  EnemyRigidBody: {fileID: 1381329255846257094}
   AudioSource: {fileID: 2961985092232067138}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
   EnemyActiveZone: {fileID: 7540827836962262996}
   Animator: {fileID: 6426285668306994742}
+  IsFacingRight: 0
+  _movement: {fileID: 8530639965305961523}
+  _shotAttack: {fileID: 9046166977479673255}
+--- !u!114 &8530639965305961523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233487110962335155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9bcf5468352a94da0b2f86cdae65c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 2
+  EnemyRigidBody: {fileID: 1381329255846257094}
+--- !u!114 &9046166977479673255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233487110962335155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8001101ffdd40bd40831fb6257ab6e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   ShotObject: {fileID: 5380688863352097329}
   StartingPosition: {fileID: 162242834343149175}
-  FireDelay: 4
-  IsFacingRight: 0
+  FireDelay: 3

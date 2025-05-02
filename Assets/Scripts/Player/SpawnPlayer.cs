@@ -16,18 +16,19 @@ public class SpawnPlayer : MonoBehaviour
         switch (PlayerPrefs.GetInt("SelectedCharacter"))
         {
             case 0:
-                SpawnPlayerCharacter(_warriorPrefab);
+                SpawnPlayerCharacter(_warriorPrefab, 2);
                 break;
             case 1:
-                SpawnPlayerCharacter(_wizardPrefab);
+                SpawnPlayerCharacter(_wizardPrefab, 1);
                 break;
 
         }
     }
 
-    private void SpawnPlayerCharacter(GameObject playerCharacter)
+    private void SpawnPlayerCharacter(GameObject playerCharacter, int damage)
     {
         var character = Instantiate(playerCharacter, _default.transform.position, Quaternion.identity);
         character.SetActive(true);
+        PlayerPrefs.SetInt("PlayerDamage", damage);
     }
 }

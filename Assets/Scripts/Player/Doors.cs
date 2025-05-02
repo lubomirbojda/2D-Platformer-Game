@@ -8,12 +8,13 @@ public class Doors : MonoBehaviour
 
     public void OpenDoors()
     {
-        _animator.SetBool("doorsOpened", true);
+        _animator.SetBool("open", true);
     }
 
     public void AllowLevelComplete()
     {
         _areDoorsOpened = true;
+        _animator.SetBool("doorsOpened", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

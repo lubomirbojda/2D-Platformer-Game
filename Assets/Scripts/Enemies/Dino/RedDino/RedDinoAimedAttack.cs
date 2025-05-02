@@ -6,7 +6,8 @@ public class RedDinoAimedAttack : Dino
 
     private void Start()
     {
-        NextFireTime = Time.time;
+        //NextFireTime = Time.time;
+        _shotAttack.SetNewFireTime(Time.time);
     }
 
     protected override void Update()
@@ -15,7 +16,7 @@ public class RedDinoAimedAttack : Dino
 
         if (EnemyActiveZone.IsActive())
         {
-            if (Time.time > NextFireTime)
+            if (Time.time > _shotAttack.GetNextFireTime())
             {
                 MakeAttack();
             }

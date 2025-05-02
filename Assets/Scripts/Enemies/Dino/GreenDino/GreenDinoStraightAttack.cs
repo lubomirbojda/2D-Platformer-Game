@@ -16,7 +16,7 @@ public class GreenDinoStraightAttack : Dino
     {
         base.Update();
 
-        if (Time.time > NextFireTime)
+        if (Time.time > _shotAttack.GetNextFireTime())
         {
             MakeAttack();
         }
