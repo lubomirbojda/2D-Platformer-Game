@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455eb49a15d44764e8fa79916dc47a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20
+  Health: 50
   AudioSource: {fileID: 681298581}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -13008,7 +13008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037823959b09b0e4e8e99524aa0fc090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 1535407329}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -13319,7 +13319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d151ed4ad9ddf5f428176bd3e88b3620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 1611428177}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -13609,7 +13609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc09cdd7bb168a847a1961793ff404ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 614881437}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -16194,7 +16194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d151ed4ad9ddf5f428176bd3e88b3620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 2057668240}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -17090,7 +17090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037823959b09b0e4e8e99524aa0fc090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 1539915362}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -20415,7 +20415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037823959b09b0e4e8e99524aa0fc090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 508059763357844514}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -21532,7 +21532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc09cdd7bb168a847a1961793ff404ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 4726631229445938249}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -21551,7 +21551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d971d01de4f6a4646aeff55bbbd3baf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 4
   AudioSource: {fileID: 5889431736307898501}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -24782,7 +24782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d151ed4ad9ddf5f428176bd3e88b3620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 8838977127623043330}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}

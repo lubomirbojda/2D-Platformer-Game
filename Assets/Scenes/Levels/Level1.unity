@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f00548075cefd041ac2f9d934f55bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 2100183797}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -10650,7 +10650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037823959b09b0e4e8e99524aa0fc090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 4826843617203722041}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -12086,7 +12086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc09cdd7bb168a847a1961793ff404ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 4680585609021480668}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -13253,7 +13253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f00548075cefd041ac2f9d934f55bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 3824321224813924260}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -13950,7 +13950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f00548075cefd041ac2f9d934f55bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 5242455969866145124}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
@@ -14973,7 +14973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d151ed4ad9ddf5f428176bd3e88b3620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 5
   AudioSource: {fileID: 2860640490147256712}
   DeathAudioClip: {fileID: 8300000, guid: cb18880727c644d41a67cf7cd750da48, type: 3}
   HitAudioClip: {fileID: 8300000, guid: c367679ffd7f1894b9c5df97ea83a436, type: 3}
