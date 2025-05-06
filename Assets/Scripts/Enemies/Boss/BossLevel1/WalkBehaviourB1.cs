@@ -50,22 +50,9 @@ public class WalkBehaviourB1 : BaseBossBehaviour
         FollowPlayer();
     }
 
-    private void FollowPlayer()
-    {
-        RotateTowardPlayer();
-        Vector2 target = new Vector2(_playerTransform.position.x, _bossRigidBody.position.y);
-        Vector2 newPos = Vector2.MoveTowards(_bossRigidBody.position, target, _boss.GetMoveSpeed() * Time.fixedDeltaTime);
-        _bossRigidBody.MovePosition(newPos);
-    }
-
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Idle");
-    }
-
-    private float GetPlayerDistance()
-    {
-        return Vector3.Distance(_playerTransform.position, _bossRigidBody.position);
     }
 
 }

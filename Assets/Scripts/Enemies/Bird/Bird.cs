@@ -2,11 +2,7 @@ using UnityEngine;
 
 public class Bird : ActiveEnemy
 {
-    //[SerializeField] protected GameObject ShotObject;
-    //[SerializeField] protected GameObject StartingPosition;
-    //[SerializeField] protected float FireDelay;
     [SerializeField] protected bool IsFacingRight;
-   // protected float NextFireTime;
 
     [SerializeField] private MoveLeftRight _movement;
     [SerializeField] private ShotAttack _shotAttack;
@@ -20,7 +16,6 @@ public class Bird : ActiveEnemy
     {
         base.Update();
 
-        //Move(IsFacingRight, false);
         _movement.Move(IsFacingRight, false);
 
         if (Time.time > _shotAttack.GetNextFireTime())
@@ -39,12 +34,9 @@ public class Bird : ActiveEnemy
     private void MakeAttack()
     {
         StartAttackAnimation();
-        //Attack();
 
         _shotAttack.Attack();
         _shotAttack.SetNextFireTime();
-
-        //NextFireTime = Time.time + FireDelay;
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -54,8 +46,6 @@ public class Bird : ActiveEnemy
         if (collision.CompareTag("EnemyMovePoint"))
         {
             IsFacingRight = !IsFacingRight;
-
-            //EnemyRigidBody.transform.Rotate(0, 180, 0);
             _movement.GetRigidbody2D().transform.Rotate(0, 180, 0);
 
         }

@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class BossEnemy : ActiveEnemy
 {
-    [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _moveDistance;
-    [SerializeField] private float _attackDistance;
-    [SerializeField] private bool _isFacingRight;
-    [SerializeField] private Doors _doors;
+    [SerializeField] protected float _moveSpeed;
+    [SerializeField] protected float _moveDistance;
+    [SerializeField] protected float _attackDistance;
+    [SerializeField] protected bool _isFacingRight;
+    [SerializeField] protected Doors _doors;
 
     protected override void TakeDamage()
     {
@@ -21,6 +21,11 @@ public class BossEnemy : ActiveEnemy
     public float GetMoveSpeed()
     {
         return _moveSpeed;
+    }
+
+    public void SetMoveSpeed(float moveSpeed)
+    {
+        _moveSpeed = moveSpeed;
     }
 
     public float GetMoveDistance()
