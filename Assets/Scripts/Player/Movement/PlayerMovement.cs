@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("yVelocity", _playerRigidBody.linearVelocityY);
     }
 
+    //Check if player body should be flipped if player moved on opposite site that he is facing right now
     private void CheckFlip()
     {
         if ((_isFacingRight && _horizontalInput < 0f) || (!_isFacingRight && _horizontalInput > 0f))
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //Method called on every input press (keyboard - a/d)
     public void OnMove(InputAction.CallbackContext context)
     {
         if (Pause.GameIsPaused)
@@ -54,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         CheckFlip();
     }
 
+    //Method called on attack input (left mouse click)
     public void OnAttack()
     {
         if (Pause.GameIsPaused)

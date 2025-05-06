@@ -8,12 +8,14 @@ public class WizardBall : MonoBehaviour
     private bool _isFacingRight = true;
     private float _ballSpeed = 3f;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _ballRigidBody = GetComponent<Rigidbody2D>();
         CheckRigidbodyRotate(_wizzardRigidBody, _ballRigidBody);
     }
 
+    //Check rotation of player and set same rotation on ball shot
     private void CheckRigidbodyRotate(Rigidbody2D rotatedBody, Rigidbody2D bodyToRotate)
     {
         if (rotatedBody.transform.localScale.x < 0)
@@ -25,6 +27,7 @@ public class WizardBall : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (_isFacingRight)

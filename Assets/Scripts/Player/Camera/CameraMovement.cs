@@ -12,12 +12,14 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float _yMinLimit;
     private bool _isLocked = false;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
+    //Set the camera position by player position - if is on maximum on minimum, camera dont move
     void Update()
     {
 

@@ -8,6 +8,8 @@ public class StraightShot : EnemyShot
     [SerializeField] private bool Right;
     [SerializeField] private bool Left;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Check and set direction of shot + lifetime
     private void Start()
     {
         if (Up)

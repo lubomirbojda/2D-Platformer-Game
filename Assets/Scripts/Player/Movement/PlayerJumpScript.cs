@@ -8,20 +8,14 @@ public class PlayerJumpScript : MonoBehaviour
     private bool _isGrounded = true;
 
     private Rigidbody2D _playerRB;
-    //private BoxCollider2D jumpCollider;
 
     private Animator _animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _playerRB = GetComponentInParent<Rigidbody2D>();
-        //jumpCollider = GetComponent<BoxCollider2D>();
         _animator = GetComponentInParent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,6 +37,7 @@ public class PlayerJumpScript : MonoBehaviour
         } 
     }
 
+    //Method called on player jump input (spacebar)
     public void OnJump()
     {
         if (Pause.GameIsPaused)

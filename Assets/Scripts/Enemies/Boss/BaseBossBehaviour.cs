@@ -6,6 +6,7 @@ public class BaseBossBehaviour : StateMachineBehaviour
     protected Rigidbody2D _bossRigidBody;
     protected BossEnemy _boss;
 
+    //Set fields at start of animation
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -13,11 +14,13 @@ public class BaseBossBehaviour : StateMachineBehaviour
         _boss = animator.GetComponent<BossEnemy>();
     }
 
+    //Rotate enemy body toward player body
     protected void RotateTowardPlayer()
     {
         RotateTowardPoint(_playerTransform.position.x);
     }
 
+    //Rotate enemy body (left/right) by sent x value
     protected void RotateTowardPoint(float x)
     {
         if (x < _bossRigidBody.position.x && _boss.IsFacingRight())
@@ -33,6 +36,7 @@ public class BaseBossBehaviour : StateMachineBehaviour
         }
     }
 
+    //Moving enemy toward sent float variables
     protected void MoveToPoint(float x, float y)
     {
         RotateTowardPoint(x);
@@ -41,11 +45,13 @@ public class BaseBossBehaviour : StateMachineBehaviour
         _bossRigidBody.MovePosition(newPos);
     }
 
+    //Enemy follow player on his position
     protected void FollowPlayer()
     {
         MoveToPoint(_playerTransform.position.x, _bossRigidBody.position.y);
     }
 
+    //Return distance between enemy and player
     protected float GetPlayerDistance()
     {
         return Vector3.Distance(_playerTransform.position, _bossRigidBody.position);

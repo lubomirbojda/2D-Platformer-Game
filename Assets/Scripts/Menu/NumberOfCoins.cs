@@ -10,10 +10,4 @@ public class NumberOfCoins : MonoBehaviour
     {
         _text.SetText(PlayerPrefs.GetInt("Coins").ToString());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +8,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject _abilitySelectScreen;
     [SerializeField] private GameObject _optionsScreen;
     [SerializeField] private GameObject _resetScreen;
+    [SerializeField] private GameObject _controlsScreen;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
         CleanMenu();
     }
 
+    //Deactivate all menu windows
     private void CleanMenu()
     {
         _selectLevelScreen.SetActive(false);
@@ -28,10 +29,13 @@ public class MainMenu : MonoBehaviour
         _abilitySelectScreen.SetActive(false);
         _optionsScreen.SetActive(false);
         _resetScreen.SetActive(false);
+        _controlsScreen.SetActive(false);
     }
 
+    //Reset player prefs to default ones
     private void SetDeafultPlayerPrefs()
     {
+        PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("FirstStartDone", 1);
         PlayerPrefs.SetInt("SelectedCharacter", 0);
         PlayerPrefs.SetInt("Coins", 0);
@@ -39,6 +43,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetFloat("Volume", 1);
     }
 
+    //Reset game stats
     public void ResetPlayerPrefs()
     {
         PlayerPrefs.DeleteAll();
@@ -75,6 +80,7 @@ public class MainMenu : MonoBehaviour
         _abilitySelectScreen.SetActive(false);
     }
 
+    //Switch to level scene with given name
     public void StartLevel(string sceneName)
     {
         CleanMenu();
@@ -102,12 +108,24 @@ public class MainMenu : MonoBehaviour
         _resetScreen.SetActive(false);
     }
 
+    public void ControlsOpen()
+    {
+        _controlsScreen.SetActive(true);
+    }
+
+    public void ControlsClose()
+    {
+        _controlsScreen.SetActive(false);
+    }
+
+    //Save selected character to player prefs
     public void SetSelectedCharacter(int charaterIndex)
     {
         PlayerPrefs.SetInt("SelectedCharacter", charaterIndex);
         PlayerPrefs.Save();
     }
 
+    //Quit game
     public void Quit()
     {
         Application.Quit();

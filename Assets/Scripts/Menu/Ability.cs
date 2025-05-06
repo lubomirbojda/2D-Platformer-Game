@@ -13,6 +13,7 @@ public class Ability : MonoBehaviour
     private bool _active = false;
     private bool _isBought = false;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         _priceText.SetText("Price: " + _price.ToString());
@@ -32,6 +33,7 @@ public class Ability : MonoBehaviour
         }
     }
 
+    //Unlock ability if player has enough coins
     public void Buy()
     {
         if (PlayerPrefs.GetInt("Coins") >= _price)
@@ -43,6 +45,7 @@ public class Ability : MonoBehaviour
         }
     }
 
+    //Set ability which player clicked on in menu to active one
     public void SetAbilityActive()
     {
         if (!_isBought)
@@ -59,6 +62,8 @@ public class Ability : MonoBehaviour
         _active = true;
     }
 
+
+    //Deactivate ability which player clicked on in menu
     public void DeactivateAbility()
     {
         if (!_isBought)

@@ -25,6 +25,7 @@ public class CoinScript : MonoBehaviour
         }
     }
 
+    //Save picked coin to player prefs
     public void SaveCoin()
     {
         PlayerPrefs.SetInt("Coin" + _coinID, 1);

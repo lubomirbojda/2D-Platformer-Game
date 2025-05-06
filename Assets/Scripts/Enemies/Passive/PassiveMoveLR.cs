@@ -21,7 +21,6 @@ public class PassiveMoveLR : PassiveEnemy
         if (collision.CompareTag("EnemyMovePoint"))
         {
             IsFacingRight = !IsFacingRight;
-            //EnemyRigidBody.transform.Rotate(0, 180, 0);
             _movement.GetRigidbody2D().transform.Rotate(0, 180, 0);
         }
     }

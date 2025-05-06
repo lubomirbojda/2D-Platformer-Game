@@ -15,6 +15,7 @@ public class ActiveEnemy : Enemy
         Animator.SetBool("isAttacking", false);
     }
 
+    //return actual player position
     public static Vector3 GetPlayerPosition()
     {
         var playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;

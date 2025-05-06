@@ -3,23 +3,30 @@ using UnityEngine;
 
 public class PlayerGetHit : MonoBehaviour
 {
-    [SerializeField] private int _playerHealth;
+    [SerializeField] private int _playerHealt;
     private bool _isDead = false;
+    private int _maxHealt;
 
     private float _invincibilityDuration = 1.5f;
     private SpriteRenderer _spriteRenderer;
 
     private bool _isInvincible = false;
 
-    private void Start()
+    //Awake is called before script is initialized
+    private void Awake()
     {
         if (AbiilitiesSelection.IsAbilityActiveByIndex(0))
         {
-            _playerHealth++;
+            _playerHealt++;
         }
+    }
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Start()
+    {
         var player = GameObject.FindGameObjectWithTag("Player");
         _spriteRenderer = player.GetComponent<SpriteRenderer>();
+        _maxHealt = _playerHealt;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,17 +38,18 @@ public class PlayerGetHit : MonoBehaviour
                 return;
             } 
 
-            _playerHealth -= 1;
-            if (_playerHealth <= 0)
+            _playerHealt -= 1;
+            if (_playerHealt <= 0)
             {
                 _isDead = true;
             }
             StartCoroutine(InvincibilityCoroutine());
             Debug.Log("Dostal si hit");
-            Debug.Log("Hp: " + _playerHealth);
+            Debug.Log("Hp: " + _playerHealt);
         }
     }
 
+    //IEnumerator which makes blink effect of player when he gets hit from enemy
     private IEnumerator InvincibilityCoroutine()
     {
         _isInvincible = true;
@@ -63,5 +71,15 @@ public class PlayerGetHit : MonoBehaviour
     public bool IsDead()
     {
         return _isDead;
+    }
+
+    public int GetActualHealth()
+    {
+        return _playerHealt;
+    }
+
+    public int GetMaxhealt()
+    {
+        return _maxHealt;
     }
 }

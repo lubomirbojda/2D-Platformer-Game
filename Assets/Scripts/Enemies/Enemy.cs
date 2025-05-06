@@ -13,11 +13,13 @@ public class Enemy : MonoBehaviour
 
     private int _maxHealth;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         _maxHealth = Health;
     }
 
+    //Base method of enemy, which is called when he collides with enemy or enemy attack
     protected virtual void TakeDamage() 
     {
         int damage = 1;
@@ -36,6 +38,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
     protected virtual void Update()
     {
         if (IsDead)
@@ -72,5 +75,10 @@ public class Enemy : MonoBehaviour
     public int GetMaxHealth()
     {
         return _maxHealth;
+    }
+
+    public bool IsEnemyDead()
+    {
+        return IsDead;
     }
 }

@@ -27,8 +27,6 @@ public class PassiveMoveLRAttack : PassiveEnemy
         {
             IsFacingRight = !IsFacingRight;
 
-            //EnemyRigidBody.transform.Rotate(0, 180, 0);
-
             _movement.GetRigidbody2D().transform.Rotate(0, 180, 0);
 
             _animator.SetBool("isAttacking", true);

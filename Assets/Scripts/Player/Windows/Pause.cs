@@ -26,7 +26,7 @@ public class Pause : MonoBehaviour
     {
         if (_playerGetHitScript.IsDead())
         {
-            //Defeat();
+            Defeat();
         }
     }
 
@@ -93,6 +93,7 @@ public class Pause : MonoBehaviour
     public void Vicotry()
     {
         CleanPauseGame();
+        CoinManager.SavePickedCoins();
         _vicotryWindow.SetActive(true);
     }
 

@@ -19,17 +19,20 @@ public class VolumeSettings : MonoBehaviour
         }
     }
 
+    //Changes maximum volume in game
     public void ChangeVolume()
     {
         AudioListener.volume = _volumeSlider.value;
         SaveVolumeToPlayerPrefs();
     }
 
+    //Load maximum volume from player prefs
     private void LoadVolumeFromPlayerPrefs()
     {
         _volumeSlider.value = PlayerPrefs.GetFloat("Volume");
     }
 
+    //Save maximum volume to player prefs
     private void SaveVolumeToPlayerPrefs()
     {
         PlayerPrefs.SetFloat("Volume", _volumeSlider.value);

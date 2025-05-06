@@ -6,11 +6,13 @@ public class SpawnPlayer : MonoBehaviour
     [SerializeField] private GameObject _warriorPrefab;
     [SerializeField] private GameObject _wizardPrefab;
 
+    //Awake is called before script is initialized
     private void Awake()
     {
         InstantiatePlayerCharacter();
     }
 
+    //Based on selected character from menu, player character will be spawned
     private void InstantiatePlayerCharacter()
     {
         switch (PlayerPrefs.GetInt("SelectedCharacter"))
@@ -25,6 +27,7 @@ public class SpawnPlayer : MonoBehaviour
         }
     }
 
+    //Spawn player character on default position
     private void SpawnPlayerCharacter(GameObject playerCharacter, int damage)
     {
         var character = Instantiate(playerCharacter, _default.transform.position, Quaternion.identity);

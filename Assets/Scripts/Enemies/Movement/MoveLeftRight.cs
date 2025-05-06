@@ -11,6 +11,7 @@ public class MoveLeftRight : MonoBehaviour, IEnemyMovement
         return EnemyRigidBody;
     }
 
+    //Setting enemy moving to left/right by bool value
     public void Move(bool facingRight, bool facingUp)
     {
         if (facingRight)

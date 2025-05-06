@@ -7,11 +7,13 @@ public class Bird : ActiveEnemy
     [SerializeField] private MoveLeftRight _movement;
     [SerializeField] private ShotAttack _shotAttack;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         _shotAttack.SetNewFireTime(Time.time);
     }
 
+    // Update is called once per frame
     protected override void Update()
     {
         base.Update();
@@ -31,13 +33,14 @@ public class Bird : ActiveEnemy
         }
     }
 
+
     private void MakeAttack()
     {
         StartAttackAnimation();
-
         _shotAttack.Attack();
         _shotAttack.SetNextFireTime();
     }
+
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
